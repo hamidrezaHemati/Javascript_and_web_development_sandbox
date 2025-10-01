@@ -1,11 +1,40 @@
-const Hamid = {
-    firstName: 'Hamidreza',
-    lastName: 'Hemati',
-    friends: ['Parvin', 'Kasra', 'Niusha'],
-    location: 'Iran',
-    job: 'Developer'
+const Mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: '78',
+    height: '1.69',
+
+    calcBMI: function(){
+        this.BMI = (this.mass / this.height) ** 2
+        return this.BMI
+    }
 }
 
-console.log(Hamid['job'])
+const John = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: '92',
+    height: '1.95',
 
-console.log(`${Hamid.firstName} has ${Hamid.friends.length}, and his best frind called ${Hamid['friends'][0]}`)
+    calcBMI: function(){
+        this.BMI = (this.mass / this.height) ** 2
+        return this.BMI
+    }
+}
+
+
+function compareBMI(){
+    p1_BMI = Mark.calcBMI
+    p2_BMI = John.calcBMI
+    if (p1_BMI > p2_BMI){
+        console.log('Mark has higher BMI')
+    }
+    else if(p2_BMI > p1_BMI){
+        console.log("John smith has higher BMI")
+    }
+    else{
+        console.log("same BMI")
+    }
+}
+
+compareBMI()
