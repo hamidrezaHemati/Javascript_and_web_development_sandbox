@@ -1,22 +1,23 @@
-'use strict';
+bills = new Array(125,555,44)
+tips = new Array()
+totlas = new Array()
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
-const calcWinningCondition = (value) => value * 2;
-
-function checkWinner(){
-    
-    const avgDolphins = calcAverage(85, 54, 41);
-    const avgKoalas = calcAverage(23, 34, 27);
-
-    if (avgDolphins > avgKoalas && avgDolphins >= calcWinningCondition(avgKoalas)){
-        console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
-    }
-    else if (avgDolphins < avgKoalas && avgKoalas >= calcWinningCondition(avgDolphins)){
-        console.log(`Dolphins win (${avgKoalas} vs ${avgDolphins})`);
-    }
-    else{
-        console.log(`No Winners (Dolphins: ${avgDolphins} - Koalas: ${avgKoalas})`);
-    }
+const calcTip = bill => bill <=300 && bill >= 50 ? bill * 0.15 : bill * 0.2
+const calcTip2 = function(bill){
+    return bill <=300 && bill >= 50 ? bill * 0.15 : bill * 0.2
+}
+function calcTip3(bill){
+    return bill <=300 && bill >= 50 ? bill * 0.15 : bill * 0.2
 }
 
-checkWinner()
+tips.push(calcTip3(bills[0]))
+tips.push(calcTip3(bills[1]))
+tips.push(calcTip3(bills[2]))
+
+totlas.push(bills[0] + tips[0])
+totlas.push(bills[1] + tips[1])
+totlas.push(bills[2] + tips[2])
+
+console.log(bills)
+console.log(tips)
+console.log(totlas)
